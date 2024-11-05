@@ -4,6 +4,11 @@ from tkinter import filedialog
 class Main():
     def __init__(self) -> None:
         root = tk.Tk()
+        icon = tk.PhotoImage(file = 'icon.png')
+        root.wm_iconphoto(False, icon)
+        root.windowTitle = root.title("Youtube Downloader")
+        root.geometry("400x100")
+        
         self.URL_var=tk.StringVar()
         
         # creating a label for 
@@ -12,7 +17,7 @@ class Main():
         
         # creating a entry for input
         # name using widget Entry
-        name_entry = tk.Entry(root,textvariable = self.URL_var, font=('calibre',10,'normal'))
+        URL_entry = tk.Entry(root,textvariable = self.URL_var, font=('calibre',10,'normal'))
 
         # creating a button using the widget 
         # Button that will call the submit function 
@@ -24,7 +29,7 @@ class Main():
         # the required position using grid
         # method
         name_label.grid(row=0,column=0)
-        name_entry.grid(row=0,column=1)
+        URL_entry.grid(row=0,column=1)
         sub_btn.grid(row=1,column=1)
         
         # performing an infinite loop 
